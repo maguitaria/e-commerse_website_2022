@@ -22,7 +22,7 @@
         <div class="dropdown-content">
             <a href="Man.html">MAN</a>
             <a href="woman.html">WOMAN</a>
-            <a href="accessories.html">ACCESSORIES</a>
+            <a href="./accessories">ACCESSORIES</a>
         </div>
     </div>
 

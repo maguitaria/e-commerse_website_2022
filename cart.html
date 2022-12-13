@@ -3,7 +3,7 @@
 
 <head>
     <title>THE CONCEPT website </title> <!-- name of  a document-->
-    <link rel="stylesheet" type="text/css" href='style.css'>
+    <link rel="stylesheet" type="text/css" href='theConcept_new.css'>
     <link href="StyleSheet.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
 </head>
@@ -18,12 +18,12 @@
         <div class="dropdown-content">
             <a href="Man.html">MAN</a>
             <a href="woman.html">WOMAN</a>
-            <a href="accessories.html">ACCESSORIES</a>
+            <a href="accessories">ACCESSORIES</a>
         </div>
     </div>
 
     <div class="logo">
-        <a href="index.html" target="_self">
+        <a href="theConcept_new.html" target="_self">
             <span style="--i:1">T</span>
             <span style="--i:1">H</span>
             <span style="--i:1">E</span>
@@ -57,7 +57,7 @@
 </header>
 
 <body>
-
+<ul>
 
     <div class="cartContainer">
         <div class="header-cart">
@@ -80,7 +80,8 @@
                 <div class="btn-cart">-</div>
             </div>
             <div class="prices">
-                <div class="amount">$32.99</div>
+                <li data-cost="32.99">
+                <span class="amount">32.99 €</span>
                 <div class="save"><u>Save for later</u></div>
                 <div class="remove"><u>Remove</u></div>
             </div>
@@ -100,7 +101,8 @@
                 <div class="btn-cart">-</div>
             </div>
             <div class="prices">
-                <div class="amount">$56.00</div>
+                <li data-cost="56.00">
+                <span class="amount">56 €</span>
                 <div class="save"><u>Save for later</u></div>
                 <div class="remove"><u>Remove</u></div>
             </div>
@@ -119,7 +121,8 @@
                 <div class="btn-cart">-</div>
             </div>
             <div class="prices">
-                <div class="amount">$27.87</div>
+                <li data-cost="27.87">
+                <span class="amount">27.87 €</span>
                 <div class="save"><u>Save for later</u></div>
                 <div class="remove"><u>Remove</u></div>
             </div>
@@ -140,7 +143,8 @@
                 <div class="btn-cart">-</div>
             </div>
             <div class="prices">
-                <div class="amount">$54.00</div>
+                <li data-cost="54.00">
+                <span class="amount">54 €</span>
                 <div class="save"><u>Save for later</u></div>
                 <div class="remove"><u>Remove</u></div>
             </div>
@@ -153,11 +157,69 @@
                     <div class="subtotal">Sub-Total</div>
                     <div class="items-cart">2 items</div>
                 </div>
-                <div class="total-amount">$89</div>
+                <li data-cost="89.00">
+                <span class="total-amount">89 €</span>
             </div>
             <button class="button-cart">Checkout</button>
         </div>
 
     </div>
-
+</ul>
 </body>
+<!-----footer-------------------->
+<footer>
+    <section id="footer">
+
+        <div class="foot">
+            <ul>
+                <li><a href="theConcept_new.html" target="_self">HOME</a></li>
+                <li><a href="about_us.html" target="_self">ABOUT US</a></li>
+                <li><a href="contact_us.html" target="_self">CONTACT US</a></li>
+
+            </ul>
+
+            <!--<div class="social-links">
+            <a href=""><i class="fab fa-linkedin"></i></a>
+            <a href=""><i class="fab fa-behance"></i></a>
+            <a href=""><i class="fab fa-dribbble"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>-->
+</footer>
+
+</html>
+<script>
+let db = [
+    {
+        ISO4217: '€',
+        multiply: 1
+    }, {
+        ISO4217: '₴',
+        multiply: 38.1
+    }, {
+        ISO4217: '$',
+        multiply: 0.95
+    }
+];
+
+document.querySelector('select').addEventListener('change', function (e) {
+    let option = db[this.selectedIndex];
+    // localStorage['someKey'] = this.selectedIndex;
+
+    rebuildPrices(option);
+});
+
+
+let key = localStorage['someKey'];
+
+if (key) {
+    document.querySelector('select').selectedIndex = key;
+    rebuildPrices(db[key]);
+}
+
+
+
+function rebuildPrices(option) {
+    [...document.querySelectorAll('ul span')].forEach(span => span.innerHTML = `${+(+span.parentNode.dataset.cost * option.multiply).toFixed(3)} ${option.ISO4217}`);
+}
+</script>
