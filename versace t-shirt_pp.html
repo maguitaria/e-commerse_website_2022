@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>THE CONCEPT website </title> <!-- name of  a document-->
+    <link rel="stylesheet" type="text/css" href="theConcept_new.css">
+    <link rel="stylesheet" type="text/css" href="product_page.css">
+    <link href="StyleSheet.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header>
+    <div class="dropdown">
+        <svg class="svg-icon" role="img" height="10" width="10" viewBox="0 0 10 10" aria-hidden="true"
+            focusable="false">
+            <path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
+        </svg>
+        <button class="dropbtn"></button>
+        <div class="dropdown-content">
+            <a href="Man.html">MAN</a>
+            <a href="woman.html">WOMAN</a>
+            <a href="accessories.html">ACCESSORIES</a>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="theConcept_new.html" target="_self">
+            <span style="--i:1">T</span>
+            <span style="--i:1">H</span>
+            <span style="--i:1">E</span>
+            <span style="--i:2"> </span>
+            <span style="--i:3">C</span>
+            <span style="--i:3">O</span>
+            <span style="--i:3">N</span>
+            <span style="--i:3">C</span>
+            <span style="--i:3">E</span>
+            <span style="--i:3">P</span>
+            <span style="--i:3">T</span>
+        </a>
+    </div>
+    <select class="currencyButton">
+        <option>EUR</option>
+        <option>UAH</option>
+        <option>USD</option>
+    </select>
+
+    <a href="cart.html" target="_self">
+
+        <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
+            </path>
+        </svg>
+    </a>
+
+</header>
+
+<body>
+    <main class="container">
+        
+        
+        <!--Left Column-->
+        <div class="left-column">
+            <img src="pics/versace T-shirt.webp" alt="t shirt">
+            </div>
+        
+    
+        
+        <!-- Right Column -->
+        <div class="right-column">
+            
+            
+            <!-- Product Description -->
+            <div class="product-description">
+                <span>Men Clothing</span>
+                <h1>logo-print T-shirt</h1>
+                <p>Each collection presents the chance for Versace to add logo prints to each design. This cotton T-shirt is a fine example, finished with a black Medusa Head logo printed across the white background.
+                    <br>
+                    <br>
+                    100% organic cotton.
+                    <br>
+                    <br>
+                    This product was manufactured solely using renewable energy from wind and solar power.</p>
+                </div>
+            
+            
+            <!-- More info about sustainable development -->
+            <div class="more-info">
+                
+
+                <!-- Sizes -->
+                <div class="size-choose">
+                    <span>Sizes</span>
+                    
+                    <div class="size-choose">
+                        <button>XS</button>
+                        <button>S</button>
+                        <button>M</button>
+                        <button>L</button>
+                    </div> 
+                </div>
+                <div class="about-us"> 
+                    <a href="about_us.html">More info about our products</a> </div> 
+            </div>
+            <ul>
+            <!--end of class -->
+
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <li data-cost="134.00"><span>134 €</span></li>
+                <a href="cart.html" class="cart-btn">Add to cart</a>
+        </ul>
+            </div>
+        </div>
+    </main>
+</body>
+    <!-----footer-------------------->
+    <footer>
+        <section id="footer">
+    
+            <div class="foot">
+                <ul>
+                    <li><a href="theConcept_new.html" target="_self">HOME</a></li>
+                    <li><a href="about_us.html" target="_self">ABOUT US</a></li>
+                    <li><a href="contact_us.html" target="_self">CONTACT US</a></li>
+    
+                </ul>
+    
+               <!--<div class="social-links">
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href=""><i class="fab fa-behance"></i></a>
+                    <a href=""><i class="fab fa-dribbble"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>-->
+    </footer>
+</html>
+<script>
+    let db = [
+        {
+            ISO4217: '€',
+            multiply: 1
+        }, {
+            ISO4217: '₴',
+            multiply: 38.1
+        }, {
+            ISO4217: '$',
+            multiply: 0.95
+        }
+    ];
+
+    document.querySelector('select').addEventListener('change', function (e) {
+        let option = db[this.selectedIndex];
+        // localStorage['someKey'] = this.selectedIndex;
+
+        rebuildPrices(option);
+    });
+
+
+    let key = localStorage['someKey'];
+
+    if (key) {
+        document.querySelector('select').selectedIndex = key;
+        rebuildPrices(db[key]);
+    }
+
+
+
+    function rebuildPrices(option) {
+        [...document.querySelectorAll('ul span')].forEach(span => span.innerHTML = `${+(+span.parentNode.dataset.cost * option.multiply).toFixed(3)} ${option.ISO4217}`);
+    }
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>THE CONCEPT website </title> <!-- name of  a document-->
+    <link rel="stylesheet" type="text/css" href='theConcept_new.css'>
+    <link href="StyleSheet.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+</head>
+<header>
+    <div class="dropdown">
+
+        <svg class="svg-icon" role="img" height="10" width="10" viewBox="0 0 10 10" aria-hidden="true"
+            focusable="false">
+            <path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
+        </svg>
+        <button class="dropbtn"></button>
+        <div class="dropdown-content">
+            <a href="Man.html">MAN</a>
+            <a href="woman.html">WOMAN</a>
+            <a href="accessories.html">ACCESSORIES</a>
+        </div>
+    </div>
+
+    <div class="logo">
+        <a href="theConcept_new.html" target="_self">
+            <span style="--i:1">T</span>
+            <span style="--i:1">H</span>
+            <span style="--i:1">E</span>
+            <span style="--i:2"> </span>
+            <span style="--i:3">C</span>
+            <span style="--i:3">O</span>
+            <span style="--i:3">N</span>
+            <span style="--i:3">C</span>
+            <span style="--i:3">E</span>
+            <span style="--i:3">P</span>
+            <span style="--i:3">T</span>
+        </a>
+    </div>
+    <a href="cart.html" target="_self">
+        <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
+            </path>
+        </svg>
+    </a>
+    </nav>
+    </section>
+</header>
+
+<body>
+    <div id="container_contactus">
+        <h3> Contact us </h3>
+        <div class="underline">
+        </div>
+        <div class="icon_wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                <path
+                    d="M12 2C6.486 2 2 6.486 2 12v4.143C2 17.167 2.897 18 4 18h1a1 1 0 0 0 1-1v-5.143a1 1 0 0 0-1-1h-.908C4.648 6.987 7.978 4 12 4s7.352 2.987 7.908 6.857H19a1 1 0 0 0-1 1V18c0 1.103-.897 2-2 2h-2v-1h-4v3h6c2.206 0 4-1.794 4-4 1.103 0 2-.833 2-1.857V12c0-5.514-4.486-10-10-10z">
+                </path>
+            </svg>
+
+        </div>
+        <form action="contact_us.php" method="post" id="contact_form">
+            <div class="name">
+                <label for="name"></label>
+                <input type="text" placeholder="My name is" name="name" id="name_input" required>
+            </div>
+            <div class="phone">
+                <label for="phone"></label>
+                <input type="phone" placeholder="My phone number is" name="phone" id="phone_input" required>
+            </div>
+            <div class="email">
+                <label for="name"></label>
+                <input type="text" placeholder="My e-mail is" name="email" id="email_input" required>
+            </div>
+
+            <div class="message">
+                <label for="message"></label>
+                <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5"
+                    required></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Send Message" id="form_button" />
+            </div>
+        </form><!-- // End form -->
+    </div><!-- // End #container -->
+</body>
+    <!-----footer-------------------->
+    <footer>
+        <section id="footer">
+    
+            <div class="foot">
+                <ul>
+                    <li><a href="theConcept_new.html" target="_self">HOME</a></li>
+                    <li><a href="about_us.html" target="_self">ABOUT US</a></li>
+                    <li><a href="contact_us.html" target="_self">CONTACT US</a></li>
+    
+                </ul>
+    
+               <!--<div class="social-links">
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href=""><i class="fab fa-behance"></i></a>
+                    <a href=""><i class="fab fa-dribbble"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>-->
+    </footer>
+
+</html>
